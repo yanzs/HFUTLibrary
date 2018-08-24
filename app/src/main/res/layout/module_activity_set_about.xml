@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/set_about_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/set_about_img_back"
+            style="@style/ToolbarImgStyle"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            android:id="@+id/set_about_text_title"
+            style="@style/ToolbarTextStyle"
+            android:text="@string/set_about_title" />
+
+        <ImageView
+            android:id="@+id/set_about_img_inform"
+            style="@style/ToolbarImgStyle"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/toolbar_inform" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/set_about_img_ic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/set_about_rela_toolbar"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/set_about_text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/set_about_img_ic"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/set_about_text_name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/set_about_text_num"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/set_about_text_name"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/set_about_text_index"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/set_about_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_about_text_num"
+        android:layout_marginTop="10dp" />
+
+
+    <TextView
+        android:id="@+id/set_about_text_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/app_sign"
+        android:textSize="15sp" />
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/inform_newbook_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/inform_newbook_img_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            android:id="@+id/inform_newbook_text_title"
+            style="@style/ToolbarTextStyle"
+            android:maxWidth="200dp"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/inform_newbook_img_inform"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"
+            android:src="@drawable/toolbar_inform" />
+
+    </RelativeLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/inform_newbook_refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/inform_newbook_rela_toolbar">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/inform_newbook_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</RelativeLayout>

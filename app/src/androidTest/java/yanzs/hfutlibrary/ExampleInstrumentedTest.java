@@ -2,6 +2,7 @@ package yanzs.hfutlibrary;
 
 import android.content.Context;
 
+import static junit.framework.Assert.assertEquals;
 
 /**
  * Instrumented use_default_head, which will execute on an Android device.

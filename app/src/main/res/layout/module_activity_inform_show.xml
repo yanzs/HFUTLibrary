@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/inform_show_rela_back">
+
+    <TextView
+        android:id="@+id/inform_show_text_download"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:text="@string/inform_show_button_store"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/circle_background_transparent"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/inform_show_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/inform_show_text_download"
+        android:layout_marginBottom="20dp"
+        android:overScrollMode="never"/>
+
+    <ImageView
+        android:id="@+id/inform_show_img_back"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/back_false"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp" />
+
+</RelativeLayout>

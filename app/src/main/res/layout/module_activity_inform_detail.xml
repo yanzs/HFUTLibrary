@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/inform_detail_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/inform_detail_img_header"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:scaleType="center" />
+
+        <RelativeLayout
+            android:id="@+id/inform_detail_rela_toolbar"
+            style="@style/ToolbarRelaStyle">
+
+            <ImageView
+                android:id="@+id/inform_detail_img_back"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:src="@drawable/toolbar_back" />
+
+            <TextView
+                android:id="@+id/inform_detail_text_title"
+                style="@style/ToolbarTextStyle"
+                android:maxWidth="200dp"
+                android:singleLine="true"
+                android:text="@string/inform_detail_title" />
+
+            <ImageView
+                android:id="@+id/inform_detail_img_inform"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:padding="15dp"
+                android:src="@drawable/toolbar_inform" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

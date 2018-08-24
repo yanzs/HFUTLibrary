@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/welcome_rela_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/WelcomeTextStyle"
+            android:layout_marginTop="80dp"
+            android:text="@string/welcome_title"
+            android:textSize="50sp" />
+
+        <TextView
+            style="@style/WelcomeTextStyle"
+            android:layout_alignParentBottom="true"
+            android:text="@string/welcome_bottom"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

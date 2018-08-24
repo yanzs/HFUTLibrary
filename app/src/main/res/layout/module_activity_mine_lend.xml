@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/mine_lend_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+
+        <ImageView
+            android:id="@+id/mine_lend_img_back"
+            style="@style/ToolbarImgStyle"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            android:id="@+id/mine_lend_text_title"
+            style="@style/ToolbarTextStyle" />
+
+        <ImageView
+            android:id="@+id/mine_lend_img_inform"
+            style="@style/ToolbarImgStyle"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/toolbar_inform" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/mine_lend_frame_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/mine_lend_linear_bottom"
+        android:layout_below="@+id/mine_lend_rela_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/mine_lend_linear_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rect_background">
+
+        <RelativeLayout
+            android:id="@+id/mine_lend_rela_column"
+            style="@style/MainBottomRelaStyle">
+
+            <ImageView
+                android:id="@+id/mine_lend_img_column"
+                style="@style/MainBottomImgStyle"
+                android:src="@drawable/mine_lend_bottom_column" />
+
+            <TextView
+                android:id="@+id/mine_lend_text_column"
+                style="@style/MainBottomTextStyle"
+                android:layout_below="@+id/mine_lend_img_column"
+                android:text="@string/mine_lend_bottom_column" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mine_lend_rela_line"
+            style="@style/MainBottomRelaStyle">
+
+            <ImageView
+                android:id="@+id/mine_lend_img_line"
+                style="@style/MainBottomImgStyle"
+                android:src="@drawable/mine_lend_bottom_line" />
+
+            <TextView
+                android:id="@+id/mine_lend_text_line"
+                style="@style/MainBottomTextStyle"
+                android:layout_below="@+id/mine_lend_img_line"
+                android:text="@string/mine_lend_bottom_line" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mine_lend_rela_pie"
+            style="@style/MainBottomRelaStyle">
+
+            <ImageView
+                android:id="@+id/mine_lend_img_pie"
+                style="@style/MainBottomImgStyle"
+                android:src="@drawable/mine_lend_bottom_pie" />
+
+            <TextView
+                android:id="@+id/mine_lend_text_pie"
+                style="@style/MainBottomTextStyle"
+                android:layout_below="@+id/mine_lend_img_pie"
+                android:text="@string/mine_lend_bottom_pie" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

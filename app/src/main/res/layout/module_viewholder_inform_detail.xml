@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@drawable/rect_background">
+
+
+    <RelativeLayout
+        android:id="@+id/viewholder_inform_detail_rela"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/viewholder_inform_detail_text_local"
+            style="@style/ViewHolderLoopTextStyle"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="宣城校区图书借阅处"/>
+
+        <TextView
+            android:id="@+id/viewholder_inform_detail_text_index"
+            style="@style/ViewHolderLoopTextStyle"
+            android:text="TP311.56/390=2"
+            android:layout_below="@id/viewholder_inform_detail_text_local"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/viewholder_inform_detail_text_state"
+            style="@style/ViewHolderLoopTextStyle"
+            android:layout_below="@id/viewholder_inform_detail_text_index"
+            android:text="借出-应还日期：2018-03-11"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

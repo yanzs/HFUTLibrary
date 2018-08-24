@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/main_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/main_img_sidemenu"
+            style="@style/ToolbarImgStyle"
+            android:src="@drawable/main_toolbar_sidemenu" />
+
+        <TextView
+            android:id="@+id/main_text_title"
+            style="@style/ToolbarTextStyle" />
+
+        <ImageView
+            android:id="@+id/main_img_search"
+            style="@style/ToolbarImgStyle"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/main_toolbar_search" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/main_frame_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_rela_toolbar"
+        android:layout_above="@+id/main_linear_bottom"/>
+
+    <LinearLayout
+        android:id="@+id/main_linear_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rect_background">
+
+        <RelativeLayout
+            android:id="@+id/main_rela_index"
+            style="@style/MainBottomRelaStyle">
+
+            <ImageView
+                android:id="@+id/main_img_index"
+                style="@style/MainBottomImgStyle"
+                android:src="@drawable/main_bottom_index" />
+
+            <TextView
+                android:id="@+id/main_text_index"
+                style="@style/MainBottomTextStyle"
+                android:layout_below="@+id/main_img_index"
+                android:text="@string/main_bottom_index" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_rela_inform"
+            style="@style/MainBottomRelaStyle">
+
+            <ImageView
+                android:id="@+id/main_img_inform"
+                style="@style/MainBottomImgStyle"
+                android:src="@drawable/main_bottom_inform" />
+
+            <TextView
+                android:id="@+id/main_text_inform"
+                style="@style/MainBottomTextStyle"
+                android:layout_below="@+id/main_img_inform"
+                android:text="@string/main_bottom_inform" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_rela_news"
+            style="@style/MainBottomRelaStyle">
+
+            <ImageView
+                android:id="@+id/main_img_news"
+                style="@style/MainBottomImgStyle"
+                android:src="@drawable/main_bottom_news" />
+
+            <TextView
+                android:id="@+id/main_text_news"
+                style="@style/MainBottomTextStyle"
+                android:layout_below="@+id/main_img_news"
+                android:text="@string/main_bottom_news" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

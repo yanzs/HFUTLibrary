@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/viewholder_mine_info_header_rela_background"
+        android:layout_width="match_parent"
+        android:layout_height="230dp" />
+    
+   <yanzs.hfutlibrary.view.CircleImageView
+       android:id="@+id/viewholder_mine_info_header_cirimg_header"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="155dp"
+       app:border_color="@color/white"
+       app:border_width="3dp"
+       app:inner_color="@color/black" />
+
+    <TextView
+        android:id="@+id/viewholder_mine_info_header_text_name"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/viewholder_mine_info_header_cirimg_header"/>
+    
+</RelativeLayout>

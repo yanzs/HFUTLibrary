@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:id="@+id/mine_group">
+
+        <item
+            android:id="@+id/menu_info"
+            android:icon="@drawable/menu_info"
+            android:title="@string/menu_text_info" />
+
+        <item
+            android:id="@+id/menu_lend"
+           android:icon="@drawable/menu_lend"
+            android:title="@string/menu_text_lend" />
+
+        <item
+            android:id="@+id/menu_now"
+            android:icon="@drawable/menu_now"
+            android:title="@string/menu_text_now" />
+        <item
+            android:id="@+id/menu_have"
+            android:icon="@drawable/menu_have"
+            android:title="@string/menu_text_have" />
+
+
+    </group>
+
+
+
+    <group android:id="@+id/set_group">
+        <item
+            android:id="@+id/menu_set"
+            android:icon="@drawable/menu_theme"
+            android:title="@string/menu_text_theme" />
+        <item
+            android:id="@+id/menu_about"
+            android:icon="@drawable/menu_about"
+            android:title="@string/menu_text_about" />
+
+    </group>
+
+
+
+</menu>

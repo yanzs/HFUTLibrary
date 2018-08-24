@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@drawable/recycle_item_click">
+
+    <RelativeLayout
+        android:id="@+id/viewholder_news_list_rela_calendar"
+        android:layout_width="54dp"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/viewholder_news_list_text_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="52dp"
+            android:layout_height="2dp"
+            android:layout_below="@+id/viewholder_news_list_text_day"
+            android:layout_centerHorizontal="true"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/viewholder_news_list_text_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewholder_news_list_text_day"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/viewholder_news_list_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_toEndOf="@+id/viewholder_news_list_rela_calendar"
+        android:layout_toRightOf="@+id/viewholder_news_list_rela_calendar"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

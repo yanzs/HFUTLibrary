@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mine_now_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/mine_now_img_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            android:id="@+id/mine_now_text_title"
+            style="@style/ToolbarTextStyle"
+            android:singleLine="true"
+            android:text="@string/mine_now_title" />
+
+        <ImageView
+            android:id="@+id/mine_now_img_inform"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"/>
+            <!--android:src="@drawable/toolbar_inform" />-->
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/mine_now_text_hint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mine_now_rela_toolbar"
+        android:text="@string/mine_now_hint"
+        android:textSize="26sp"
+        android:gravity="center"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mine_now_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mine_now_rela_toolbar" />
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/login_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <TextView
+            style="@style/ToolbarTextStyle"
+            android:text="@string/login_title"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_rela_toolbar"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle_background">
+
+        <ImageView
+            android:id="@+id/login_img_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/login_icon" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/login_textinputlayout_number"
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_below="@+id/login_img_icon">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/login_textinputedittext_number"
+                style="@style/LoginTextInputEditTextStyle"
+                android:hint="@string/login_hint_number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/login_textinputlayout_passwd"
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_below="@+id/login_textinputlayout_number">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/login_textinputedittext_passwd"
+                style="@style/LoginTextInputEditTextStyle"
+                android:hint="@string/login_hint_passwd"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/login_textinputlayout_captcha"
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_below="@+id/login_textinputlayout_passwd">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/login_textinputedittext_captcha"
+                style="@style/LoginTextInputEditTextStyle"
+                android:hint="@string/login_hint_captcha" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/login_text_hint_captcha"
+            style="@style/LoginCaptchaStyle"
+            android:layout_below="@+id/login_textinputlayout_captcha"
+            android:gravity="center"
+            android:text="@string/login_captcha_hint"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/login_img_captcha"
+            style="@style/LoginCaptchaStyle"
+            android:layout_below="@+id/login_textinputlayout_captcha" />
+
+        <Button
+            android:id="@+id/login_bt_click"
+            style="@style/LoginClickButtonStyle"
+            android:layout_below="@+id/login_img_captcha"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_button_background"
+            android:text="@string/login_click"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="@string/app_sign"
+        android:layout_marginBottom="10dp"/>
+
+</RelativeLayout>

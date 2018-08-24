@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@drawable/circle_background">
+
+
+    <TextView
+        android:id="@+id/viewholder_mine_now_text_name"
+        style="@style/ViewHolderLoopTextStyle"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/viewholder_mine_now_text_lenddata"
+        style="@style/ViewHolderLoopTextStyle"
+        android:layout_below="@+id/viewholder_mine_now_text_name"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/viewholder_mine_now_text_enddata"
+        style="@style/ViewHolderLoopTextStyle"
+        android:layout_below="@id/viewholder_mine_now_text_lenddata"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/viewholder_mine_now_text_lendnum"
+        style="@style/ViewHolderLoopTextStyle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/viewholder_mine_now_text_item"
+        style="@style/ViewHolderLoopTextStyle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/viewholder_mine_now_text_lendnum"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>

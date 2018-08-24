@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <yanzs.hfutlibrary.view.ScaleImageView
+        android:id="@+id/news_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"/>
+
+
+    <RelativeLayout
+        android:id="@+id/news_img_rela_download"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@color/light_black">
+        <ImageView
+            android:id="@+id/news_img_download"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/news_download"
+            android:padding="8dp"/>
+        <TextView
+            android:layout_toRightOf="@id/news_img_download"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="@string/news_img_download"
+            android:gravity="center"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

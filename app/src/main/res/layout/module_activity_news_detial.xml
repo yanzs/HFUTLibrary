@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/news_detail_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/news_detail_img_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            style="@style/ToolbarTextStyle"
+            android:layout_marginLeft="56dp"
+            android:layout_marginStart="56dp"
+            android:text="@string/news_detail_title" />
+
+        <ImageView
+            android:id="@+id/news_detail_img_inform"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="15dp" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/news_detail_pro"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_below="@+id/news_detail_rela_toolbar"/>
+
+    <WebView
+        android:id="@+id/news_detail_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/news_detail_pro" />
+
+</RelativeLayout>

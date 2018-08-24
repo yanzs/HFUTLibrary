@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/set_theme_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/set_theme_img_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            style="@style/ToolbarTextStyle"
+            android:layout_marginLeft="56dp"
+            android:layout_marginStart="56dp"
+            android:text="@string/set_theme_title" />
+
+        <ImageView
+            android:id="@+id/set_theme_img_get"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/theme_get"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/set_theme_img_show"
+        android:layout_width="200dp"
+        android:layout_height="320dp"
+        android:layout_below="@+id/set_theme_rela_toolbar"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/theme_show"
+        android:layout_marginTop="30dp"/>
+
+
+
+    <SeekBar
+        android:id="@+id/set_theme_bar_black"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/set_theme_bar_green"
+        android:layout_marginBottom="4dp"
+        android:progressTint="@color/black"
+        android:thumbTint="@color/black"/>
+
+    <SeekBar
+        android:id="@+id/set_theme_bar_green"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/set_theme_bar_blue"
+        android:layout_marginBottom="4dp"
+        android:progressTint="@color/green"
+        android:thumbTint="@color/green"/>
+
+    <SeekBar
+        android:id="@+id/set_theme_bar_blue"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/set_theme_bar_red"
+        android:layout_marginBottom="4dp"
+        android:progressTint="@color/blue"
+        android:thumbTint="@color/blue"/>
+
+    <SeekBar
+        android:id="@+id/set_theme_bar_red"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:progressTint="@color/red"
+        android:thumbTint="@color/red"/>
+
+</RelativeLayout>

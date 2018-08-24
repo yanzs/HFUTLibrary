@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">HFUT图书馆</string>
+
+    <string name="welcome_bottom">合肥工业大学宣城校区图书馆</string>
+    <string name="welcome_title">Library</string>
+
+    <string name="login_hint_captcha">验证码</string>
+    <string name="login_hint_passwd">密码</string>
+    <string name="login_hint_number">账号</string>
+    <string name="login_captcha_hint">点击刷新</string>
+    <string name="login_click">登录</string>
+    <string name="login_title">登录图书馆</string>
+
+    <string name="app_sign">软件工程与可视化分析实验室</string>
+
+    <string name="main_bottom_index">导航</string>
+    <string name="main_bottom_news">通知</string>
+    <string name="main_bottom_inform">查询</string>
+
+    <string name="mine_lend_bottom_column">借阅时间</string>
+    <string name="mine_lend_bottom_line">借阅趋势</string>
+    <string name="mine_lend_bottom_pie">借阅分类</string>
+
+    <string name="sort_title">基本分类</string>
+    <string name="news_detail_title">新闻详情</string>
+
+    <string name="set_theme_title">自选主题</string>
+    <string name="set_about_title">关于</string>
+
+    <string name="inform_hottop_title">图书热搜</string>
+    <string name="inform_willbuy_title">读者荐购</string>
+    <string name="inform_detail_title">图书详情</string>
+
+    <string name="inform_goodbook_hint_name">书籍详情</string>
+    <string name="inform_goodbook_hint_index">检索</string>
+    <string name="inform_goodbook_hint_time">次数</string>
+    <string name="inform_goodbook_hint_scale">比例</string>
+    <string name="inform_goodbook_hint_store">馆藏</string>
+
+    <string name="footview_finish_hint">-------------我是有底线的 ( ╯-_-)╯┴—┴-------------</string>
+    <string name="news_img_download">下载到本地</string>
+    <string name="search_hint_toolbar">无法处理回车与换行等字符</string>
+    <string name="search_text_local">馆藏地：</string>
+    <string name="search_text_way">搜索方式：</string>
+    <string name="menu_text_about">关于</string>
+    <string name="menu_text_theme">主题</string>
+
+    <string name="menu_text_lend">借阅分析</string>
+    <string name="menu_text_have">借阅历史</string>
+    <string name="menu_text_now">当前借阅</string>
+    <string name="menu_text_info">证件信息</string>
+
+    <string name="mine_have_title">借阅历史</string>
+    <string name="mine_now_title">当前借阅</string>
+    <string name="mine_info_title">用户信息</string>
+
+    <string name="inform_show_button_store">保存图片</string>
+    <string name="mine_now_hint">一本都没有，快去借书吧</string>
+
+    <string name="mine_lend_column">借阅时间分布</string>
+    <string name="mine_lend_line">借阅趋势分布</string>
+    <string name="mine_lend_pie">借阅分类分布</string>
+    <string name="set_about_text_name">HFUTLibrary</string>
+    <string name="set_about_text_index">版本1.1.0</string>
+
+
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/inform_willbuy_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/inform_willbuy_img_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            android:id="@+id/inform_willbuy_text_title"
+            style="@style/ToolbarTextStyle"
+            android:text="@string/inform_willbuy_title"
+            android:singleLine="true"/>
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/inform_willbuy_img"
+        android:layout_below="@id/inform_willbuy_rela_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/willbuy"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/inform_willbuy_refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/inform_willbuy_img">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/inform_willbuy_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>
