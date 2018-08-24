@@ -13,6 +13,7 @@ import com.zyao89.view.zloading.ZLoadingDialog;
 import java.io.IOException;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import yanzs.hfutlibrary.activity.inform.Inform_Search;
 import yanzs.hfutlibrary.base.BaseActivity;
 import yanzs.hfutlibrary.bean.post.RootPost;
@@ -27,7 +28,7 @@ import yanzs.hfutlibrary.util.GsonUtil;
 import yanzs.hfutlibrary.util.OkHttpUtil;
 import yanzs.hfutlibrary.util.ShareUtil;
 
-public class App_Search extends BaseActivity implements View.OnClickListener,OnFinishRequestListener {
+public class App_Search extends BaseActivity implements OnFinishRequestListener {
 
     @BindView(R.id.search_edit_value)
     EditText edit_value;
@@ -51,8 +52,7 @@ public class App_Search extends BaseActivity implements View.OnClickListener,OnF
                 android.R.layout.simple_spinner_dropdown_item, Values.SEARCH_WAY_ITEM);
         spinner_local.setAdapter(spinnerLocalAdapter);
         spinner_way.setAdapter(spinnerWayAdapter);
-        img_act.setOnClickListener(this);
-        img_back.setOnClickListener(this);
+
     }
 
     @Override
@@ -60,7 +60,7 @@ public class App_Search extends BaseActivity implements View.OnClickListener,OnF
         return R.layout.module_activity_search;
     }
 
-    @Override
+    @OnClick({R.id.search_img_act,R.id.search_img_back})
     public void onClick(View v) {
         int id=v.getId();
         switch (id){

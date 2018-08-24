@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import yanzs.hfutlibrary.adapter.AppSortAdapter;
 import yanzs.hfutlibrary.base.BaseActivity;
 import yanzs.hfutlibrary.callBack.RequestCallBack;
@@ -26,7 +27,7 @@ import yanzs.hfutlibrary.util.DialogUtil;
 import yanzs.hfutlibrary.util.OkHttpUtil;
 import yanzs.hfutlibrary.view.GridItemDecoration;
 
-public class Inform_Sort extends BaseActivity implements OnItemClickListener,View.OnClickListener,OnFinishRequestListener{
+public class Inform_Sort extends BaseActivity implements OnItemClickListener,OnFinishRequestListener{
     @BindView(R.id.sort_recycle)
     RecyclerView sort_recycle;
     @BindView(R.id.sort_img_back)
@@ -44,8 +45,6 @@ public class Inform_Sort extends BaseActivity implements OnItemClickListener,Vie
         sort_recycle.setLayoutManager(new GridLayoutManager(this,3));
         sort_recycle.setAdapter(appSortAdapter);
         sort_recycle.addItemDecoration(new GridItemDecoration(20));
-        sort_img_back.setOnClickListener(this);
-        sort_img_inform.setOnClickListener(this);
         appSortAdapter.setOnItemClickListener(this);
 
     }
@@ -99,7 +98,7 @@ public class Inform_Sort extends BaseActivity implements OnItemClickListener,Vie
         }
     }
 
-    @Override
+    @OnClick({R.id.sort_img_back,R.id.sort_img_inform})
     public void onClick(View v) {
         int id=v.getId();
         switch (id)

@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -35,7 +36,7 @@ import yanzs.hfutlibrary.util.DialogUtil;
 import yanzs.hfutlibrary.util.OkHttpUtil;
 import yanzs.hfutlibrary.util.ShareUtil;
 
-public class App_Login extends BaseActivity implements View.OnClickListener,OnLoginCallBackListener {
+public class App_Login extends BaseActivity implements OnLoginCallBackListener {
 
     @BindView(R.id.login_img_captcha)
     ImageView login_img_captcha;
@@ -65,8 +66,6 @@ public class App_Login extends BaseActivity implements View.OnClickListener,OnLo
     protected void initActivity() {
         initView();
         initCaptchaImg();
-        initEvent();
-
     }
 
     private void initView() {
@@ -76,11 +75,6 @@ public class App_Login extends BaseActivity implements View.OnClickListener,OnLo
         passwd= ShareUtil.loadStringData(this, ShareKey.SHARED_KEY,ShareKey.KEY_USER_PASSWD);
         login_textinputedittext_number.setText(number);
         login_textinputedittext_passwd.setText(passwd);
-    }
-
-    private void initEvent() {
-        login_img_captcha.setOnClickListener(this);
-        login_bt_click.setOnClickListener(this);
     }
 
     private void initCaptchaImg() {
@@ -123,7 +117,7 @@ public class App_Login extends BaseActivity implements View.OnClickListener,OnLo
         return R.layout.module_activity_login;
     }
 
-    @Override
+    @OnClick({R.id.login_img_captcha,R.id.login_bt_click})
     public void onClick(View v) {
         int id=v.getId();
         switch (id){

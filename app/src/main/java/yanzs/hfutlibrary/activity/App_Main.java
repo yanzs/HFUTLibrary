@@ -20,6 +20,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.BindViews;
+import butterknife.OnClick;
 import yanzs.hfutlibrary.activity.mine.Mine_Have;
 import yanzs.hfutlibrary.activity.mine.Mine_Info;
 import yanzs.hfutlibrary.activity.mine.Mine_Lend;
@@ -41,7 +42,7 @@ import yanzs.hfutlibrary.util.OkHttpUtil;
 import yanzs.hfutlibrary.util.ThemeUtil;
 import yanzs.hfutlibrary.view.CircleImageView;
 
-public class App_Main extends BaseActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener, OnFinishRequestListener {
+public class App_Main extends BaseActivity implements  NavigationView.OnNavigationItemSelectedListener, OnFinishRequestListener {
 
     @BindView(R.id.main_drawer)
     DrawerLayout main_drawer;
@@ -73,15 +74,6 @@ public class App_Main extends BaseActivity implements View.OnClickListener, Navi
     @Override
     protected void initActivity() {
         initView();
-        initEvent();
-    }
-
-    private void initEvent() {
-        for (int i = 0; i < 3; i++) {
-            main_tab_rela.get(i).setOnClickListener(this);
-        }
-        main_img_sidemenu.setOnClickListener(this);
-        main_img_search.setOnClickListener(this);
     }
 
     private void initView() {
@@ -101,7 +93,7 @@ public class App_Main extends BaseActivity implements View.OnClickListener, Navi
         return R.layout.module_activity_main;
     }
 
-    @Override
+    @OnClick({R.id.main_rela_index,R.id.main_rela_inform,R.id.main_rela_news,R.id.main_img_sidemenu,R.id.main_img_search})
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {

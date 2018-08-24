@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import yanzs.hfutlibrary.adapter.InformWillBuyAdapter;
 import yanzs.hfutlibrary.base.BaseActivity;
 import yanzs.hfutlibrary.base.BaseScrollStateChanged;
@@ -25,7 +26,7 @@ import yanzs.hfutlibrary.util.JsoupUtil;
 import yanzs.hfutlibrary.util.OkHttpUtil;
 import yanzs.hfutlibrary.util.ShareUtil;
 
-public class Inform_WillBuy extends BaseActivity implements OnRefreshListener, OnFinishRequestListener ,View.OnClickListener{
+public class Inform_WillBuy extends BaseActivity implements OnRefreshListener, OnFinishRequestListener{
     @BindView(R.id.inform_willbuy_refreshlayout)
     SwipeRefreshLayout willbuy_refreshlayout;
     @BindView(R.id.inform_willbuy_recycle)
@@ -57,7 +58,6 @@ public class Inform_WillBuy extends BaseActivity implements OnRefreshListener, O
         stateChanged=new BaseScrollStateChanged(informWillBuyAdapter,layoutManager);
         stateChanged.setOnRefreshListener(this);
         willbuy_recycle.addOnScrollListener(stateChanged);
-        willbuy_img_back.setOnClickListener(this);
         if (pagerNum > 1) {
             initNextPager();
         }
@@ -113,7 +113,7 @@ public class Inform_WillBuy extends BaseActivity implements OnRefreshListener, O
         isDoing = false;
     }
 
-    @Override
+    @OnClick(R.id.inform_willbuy_img_back)
     public void onClick(View v) {
         if (v.getId()==R.id.inform_willbuy_img_back){
             finish();

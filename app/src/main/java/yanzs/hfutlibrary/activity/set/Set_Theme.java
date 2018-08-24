@@ -8,13 +8,14 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import yanzs.hfutlibrary.base.BaseActivity;
 import yanzs.hfutlibrary.constant.ShareKey;
 import yanzs.hfutlibrary.R;
 import yanzs.hfutlibrary.util.ColorUtil;
 import yanzs.hfutlibrary.util.ShareUtil;
 
-public class Set_Theme extends BaseActivity implements SeekBar.OnSeekBarChangeListener,View.OnClickListener{
+public class Set_Theme extends BaseActivity implements SeekBar.OnSeekBarChangeListener{
 
     @BindView(R.id.set_theme_bar_black)
     SeekBar bar_black;
@@ -50,8 +51,6 @@ public class Set_Theme extends BaseActivity implements SeekBar.OnSeekBarChangeLi
         bar_blue.setOnSeekBarChangeListener(this);
         bar_green.setOnSeekBarChangeListener(this);
         bar_red.setOnSeekBarChangeListener(this);
-        img_get.setOnClickListener(this);
-        img_back.setOnClickListener(this);
     }
 
     @Override
@@ -94,7 +93,7 @@ public class Set_Theme extends BaseActivity implements SeekBar.OnSeekBarChangeLi
 
     }
 
-    @Override
+    @OnClick({R.id.set_theme_img_get,R.id.set_theme_img_back})
     public void onClick(View v) {
         int id=v.getId();
         switch (id){

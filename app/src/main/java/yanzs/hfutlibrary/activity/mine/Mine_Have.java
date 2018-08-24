@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import yanzs.hfutlibrary.activity.inform.Inform_Detail;
 import yanzs.hfutlibrary.adapter.MineHaveAdapter;
 import yanzs.hfutlibrary.base.BaseActivity;
@@ -33,7 +34,7 @@ import yanzs.hfutlibrary.util.OkHttpUtil;
 import yanzs.hfutlibrary.util.ShareUtil;
 import yanzs.hfutlibrary.view.GridItemDecoration;
 
-public class Mine_Have extends BaseActivity implements OnRefreshListener,OnFinishRequestListener,OnItemClickListener,View.OnClickListener {
+public class Mine_Have extends BaseActivity implements OnRefreshListener,OnFinishRequestListener,OnItemClickListener{
 
     @BindView(R.id.mine_have_refreshlayout)
     SwipeRefreshLayout have_refreshlayout;
@@ -67,7 +68,6 @@ public class Mine_Have extends BaseActivity implements OnRefreshListener,OnFinis
         have_recycle.setAdapter(mineHaveAdapter);
         stateChanged=new BaseScrollStateChanged(mineHaveAdapter,layoutManager);
         stateChanged.setOnRefreshListener(this);
-        have_img_back.setOnClickListener(this);
         have_recycle.addOnScrollListener(stateChanged);
         if (pagerNum>1){
             initNextPager();
@@ -151,7 +151,7 @@ public class Mine_Have extends BaseActivity implements OnRefreshListener,OnFinis
         }
     }
 
-    @Override
+    @OnClick(R.id.mine_have_img_back)
     public void onClick(View v) {
         int id=v.getId();
         switch (id){

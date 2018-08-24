@@ -14,13 +14,11 @@
             android:id="@+id/viewholder_inform_detail_text_local"
             style="@style/ViewHolderLoopTextStyle"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="宣城校区图书借阅处"/>
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/viewholder_inform_detail_text_index"
             style="@style/ViewHolderLoopTextStyle"
-            android:text="TP311.56/390=2"
             android:layout_below="@id/viewholder_inform_detail_text_local"
             android:textSize="12sp" />
 
@@ -28,7 +26,6 @@
             android:id="@+id/viewholder_inform_detail_text_state"
             style="@style/ViewHolderLoopTextStyle"
             android:layout_below="@id/viewholder_inform_detail_text_index"
-            android:text="借出-应还日期：2018-03-11"
             android:textSize="12sp" />
 
     </RelativeLayout>
