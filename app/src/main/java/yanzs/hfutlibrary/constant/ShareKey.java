@@ -19,6 +19,7 @@ public class ShareKey {
     public static final String KEY_USER_INFO="user_info";
     public static final String KEY_USER_HAVE="user_have";
     public static final String KEY_USER_NOW="user_now";
+    public static final String KEY_USER_RENEW="user_renew";
 
     public static final String KEY_PAGE_USER_INFO="user_info";
 

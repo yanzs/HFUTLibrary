@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/search_rela_toolbar"
@@ -14,27 +15,31 @@
             android:padding="15dp"
             android:src="@drawable/toolbar_back" />
 
+
+        <EditText
+            android:id="@+id/search_edit_value"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/search_img_back"
+            android:layout_toRightOf="@id/search_img_back"
+            android:hint="@string/search_hint_toolbar"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:textColor="@color/light_gray"
+            android:textColorHint="@color/light_gray"
+            android:theme="@style/EditTextStyle" />
+
         <ImageView
-            android:id="@+id/search_img_act"
+            android:id="@+id/search_img_clear"
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:padding="15dp"
-            android:src="@drawable/main_toolbar_search" />
-
-        <EditText
-            android:hint="@string/search_hint_toolbar"
-            android:textColorHint="@color/light_gray"
-            android:id="@+id/search_edit_value"
-            android:layout_toRightOf="@id/search_img_back"
-            android:layout_toLeftOf="@id/search_img_act"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toEndOf="@id/search_img_back"
-            android:layout_toStartOf="@id/search_img_act" />
-
-
+            android:layout_centerVertical="true"
+            android:padding="17dp"
+            android:src="@drawable/main_toolbar_clear" />
 
     </RelativeLayout>
 
@@ -42,21 +47,22 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="@string/search_text_way"
-            android:layout_marginLeft="20dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/search_text_way"
+            android:textSize="16sp" />
 
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/search_spinner_way"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp" />
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp" />
 
     </LinearLayout>
 
@@ -65,21 +71,22 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="@string/search_text_local"
-            android:layout_marginLeft="20dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/search_text_local"
+            android:textSize="16sp" />
 
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/search_spinner_local"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp" />
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp" />
 
     </LinearLayout>
 

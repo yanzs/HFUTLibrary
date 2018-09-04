@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mine_renew_rela_toolbar"
+        style="@style/ToolbarRelaStyle">
+
+        <ImageView
+            android:id="@+id/mine_renew_img_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/toolbar_back" />
+
+        <TextView
+            android:id="@+id/mine_renew_text_title"
+            style="@style/ToolbarTextStyle"
+            android:layout_marginLeft="56dp"
+            android:layout_marginStart="56dp"
+            android:text="@string/mine_renew_title" />
+
+        <ImageView
+            android:id="@+id/mine_renew_img_inform"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="15dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mine_renew_img_captcha"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/mine_renew_rela_toolbar"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/mine_renew_textinputlayout_captcha"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_below="@+id/mine_renew_img_captcha">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/mine_renew_textinputedittext_captcha"
+            style="@style/LoginTextInputEditTextStyle"
+            android:hint="@string/login_hint_captcha" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/mine_renew_bt_renew"
+        style="@style/ClickButtonStyle"
+        android:layout_below="@+id/mine_renew_textinputlayout_captcha"
+        android:background="@drawable/login_button_background"
+        android:text="@string/mine_renew_click"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</RelativeLayout>

@@ -9,8 +9,9 @@ public class Bean_Mine_Now {
     private String locate;
     private String item;
     private String url;
+    private String check;
 
-    public Bean_Mine_Now(String num,String name,String lendData,String endData,String lendNum,String locate,String item,String url){
+    public Bean_Mine_Now( String num,String name,String lendData,String endData,String lendNum,String locate,String item,String url,String check){
         this.name=name;
         this.num=num;
         this.lendData=lendData;
@@ -19,6 +20,7 @@ public class Bean_Mine_Now {
         this.locate=locate;
         this.item=item;
         this.url=url;
+        this.check=check;
     }
 
     public String getUrl() {
@@ -85,5 +87,11 @@ public class Bean_Mine_Now {
         this.url = url;
     }
 
+    public void setCheck(String check) {
+        this.check = check;
+    }
 
+    public String getCheck() {
+        return check;
+    }
 }

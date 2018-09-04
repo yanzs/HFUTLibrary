@@ -94,6 +94,9 @@ public class OkHttpUtil {
         return getInstance()._getCallFromGET(url);
     }
 
+    public static Call getCallFromGET(String url,String host,String referer){
+        return getInstance()._getCallFromGET(url,host,referer);
+    }
 
     private void _getResponseFromPOST(BaseCallBack callBack, String number, String password, String captcha, String url) {
 
@@ -192,5 +195,9 @@ public class OkHttpUtil {
         return httpClient.newCall(request);
     }
 
+    private Call _getCallFromGET(String url,String host,String referer){
+        Request request=new Request.Builder().addHeader(Values.HTTP_HOST,host).addHeader(Values.HTTP_REFERER,referer).url(url).build();
+        return httpClient.newCall(request);
+    }
 
 }

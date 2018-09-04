@@ -85,6 +85,8 @@ public class ThemeUtil {
                 v.setBackgroundColor(color);
             }else if (v.getId() == R.id.set_about_rela_toolbar) {
                 v.setBackgroundColor(color);
+            }else if (v.getId() == R.id.mine_renew_rela_toolbar) {
+                v.setBackgroundColor(color);
             }
 
 

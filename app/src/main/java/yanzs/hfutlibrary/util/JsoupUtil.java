@@ -32,6 +32,12 @@ import yanzs.hfutlibrary.constant.ShareKey;
 import yanzs.hfutlibrary.constant.Urls;
 
 public class JsoupUtil {
+
+    public static String getTxtFromHtml(String txt) {
+        Document html = Jsoup.parse(txt);
+        return html.text();
+    }
+
     public static String getUserName(String txt) {
         Document html = Jsoup.parse(txt);
         Elements name = html.getElementsByClass("profile-name");
@@ -151,7 +157,9 @@ public class JsoupUtil {
             String lendNum ="续借量："+ elements.get(i * 8 + 4).text();
             String local = elements.get(i * 8 + 5).text();
             String item = "附件："+elements.get(i * 8 + 6).text();
-            Bean_Mine_Now beanMineNow = new Bean_Mine_Now(num,name,lendData,endDate,lendNum,local,item,url);
+            String input=elements.get(i*8+7).getElementsByTag("input").toString();
+            String check =input.substring(input.indexOf(",")+2,input.lastIndexOf(",")-1);
+            Bean_Mine_Now beanMineNow = new Bean_Mine_Now(num,name,lendData,endDate,lendNum,local,item,url,check);
             dataList.add(beanMineNow);
         }
         return dataList;

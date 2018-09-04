@@ -2,7 +2,11 @@ package yanzs.hfutlibrary.activity;
 
 import android.content.Intent;
 import android.support.v7.widget.AppCompatSpinner;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,14 +32,14 @@ import yanzs.hfutlibrary.util.GsonUtil;
 import yanzs.hfutlibrary.util.OkHttpUtil;
 import yanzs.hfutlibrary.util.ShareUtil;
 
-public class App_Search extends BaseActivity implements OnFinishRequestListener {
+public class App_Search extends BaseActivity implements OnFinishRequestListener, View.OnKeyListener{
 
     @BindView(R.id.search_edit_value)
     EditText edit_value;
-    @BindView(R.id.search_img_act)
-    ImageView img_act;
     @BindView(R.id.search_img_back)
     ImageView img_back;
+    @BindView(R.id.search_img_clear)
+    ImageView img_clear;
     @BindView(R.id.search_spinner_local)
     AppCompatSpinner spinner_local;
     @BindView(R.id.search_spinner_way)
@@ -52,6 +56,9 @@ public class App_Search extends BaseActivity implements OnFinishRequestListener 
                 android.R.layout.simple_spinner_dropdown_item, Values.SEARCH_WAY_ITEM);
         spinner_local.setAdapter(spinnerLocalAdapter);
         spinner_way.setAdapter(spinnerWayAdapter);
+        img_clear.setVisibility(View.INVISIBLE);
+        edit_value.setOnKeyListener(this);
+        edit_value.addTextChangedListener(textWatcher);
 
     }
 
@@ -60,29 +67,16 @@ public class App_Search extends BaseActivity implements OnFinishRequestListener 
         return R.layout.module_activity_search;
     }
 
-    @OnClick({R.id.search_img_act,R.id.search_img_back})
+    @OnClick({R.id.search_img_back,R.id.search_img_clear})
     public void onClick(View v) {
         int id=v.getId();
         switch (id){
-            case R.id.search_img_act:
-                dialog= DialogUtil.initLoadDialog(this,Values.HINT_DIALOG_LOAD);
-                int local= (int) spinner_local.getSelectedItemId();
-                int way= (int) spinner_way.getSelectedItemId();
-                String s=edit_value.getText().toString();
-                if (s.length()==0){
-                    Toast.makeText(this, Values.HINT_INPUT_ERROR, Toast.LENGTH_SHORT).show();
-                    break;
-                }
-                if (way==0){
-                    callBack=new RequestCallBack(ShareKey.KEY_SEARCH_PAGE_SIMPLE,this);
-                    initSimpleSearch(s,Values.SEARCH_LOCAL_KEY_ITEM[local]);
-                }else if (way==1){
-                    callBack=new RequestCallBack(ShareKey.KEY_SEARCH_PAGE_LIB,this);
-                    initLibSearch(s,Values.SEARCH_LOCAL_KEY_ITEM[local]);
-                }
-                break;
             case R.id.search_img_back:
                 finish();
+                break;
+            case R.id.search_img_clear:
+                edit_value.setText("");
+                img_clear.setVisibility(View.INVISIBLE);
                 break;
         }
     }
@@ -116,4 +110,47 @@ public class App_Search extends BaseActivity implements OnFinishRequestListener 
         startActivity(intent);
         dialog.dismiss();
     }
+
+    @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP) {
+            int local= (int) spinner_local.getSelectedItemId();
+            int way= (int) spinner_way.getSelectedItemId();
+            String s=edit_value.getText().toString();
+            if (s.length()==0){
+                Toast.makeText(this, Values.HINT_INPUT_ERROR, Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            dialog= DialogUtil.initLoadDialog(this,Values.HINT_DIALOG_LOAD);
+            if (way==0){
+                callBack=new RequestCallBack(ShareKey.KEY_SEARCH_PAGE_SIMPLE,this);
+                initSimpleSearch(s,Values.SEARCH_LOCAL_KEY_ITEM[local]);
+            }else if (way==1){
+                callBack=new RequestCallBack(ShareKey.KEY_SEARCH_PAGE_LIB,this);
+                initLibSearch(s,Values.SEARCH_LOCAL_KEY_ITEM[local]);
+            }
+        }
+        return false;
+    }
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            if (s.length() > 0) {
+                img_clear.setVisibility(View.VISIBLE);
+            } else {
+                img_clear.setVisibility(View.INVISIBLE);
+            }
+        }
+    };
+
 }

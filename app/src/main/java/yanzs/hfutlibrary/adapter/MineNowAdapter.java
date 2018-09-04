@@ -24,9 +24,9 @@ public class MineNowAdapter extends BaseListAdapter {
         TextView text_lendnum=holder.getView(R.id.viewholder_mine_now_text_lendnum);
         TextView text_item=holder.getView(R.id.viewholder_mine_now_text_item);
         text_name.setText(data.get(position).getName());
-        text_lenddata.setText(data.get(position).getName());
-        text_enddata.setText(data.get(position).getName());
-        text_lendnum.setText(data.get(position).getName());
+        text_lenddata.setText(data.get(position).getLendData());
+        text_enddata.setText(data.get(position).getEndData());
+        text_lendnum.setText(data.get(position).getLendNum());
         text_item.setText(data.get(position).getItem());
     }
 

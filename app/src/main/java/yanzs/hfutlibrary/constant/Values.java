@@ -63,6 +63,7 @@ public class Values {
 
     public static final String SORT_INTENT_SIGN = "sort_sign";
 
+    public static final String MINE_INTENT_RENEW_SIGN = "mine_renew_sign";
 
     public static final String SORT_INTENT_POS_SIGN = "sort_pos_sign";
     public static final String NEWS_INTENT_SIGN = "news_sign";
@@ -113,5 +114,8 @@ public class Values {
             "2.本软件数据皆来自于学校图书馆官网,但是查询系统可能会偶尔无法使用,请稍后再次尝试.\n\n" +
             "3.由于数据兼容性影响，数据可能出现缺失或者错误的情况,仅供参考.\n\n" +
             "4.出现问题请加内测群进行反馈.\n\n";
+
+    public static final String[] DIALOG_MINE_NOW_ITEM = {"图书详情", "图书续借"};
+    public static final String DIALOG_MINE_NOW_TITLE = "选项";
 }
 

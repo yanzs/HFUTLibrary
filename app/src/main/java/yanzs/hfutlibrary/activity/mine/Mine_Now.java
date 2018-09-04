@@ -1,5 +1,8 @@
 package yanzs.hfutlibrary.activity.mine;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -75,9 +78,31 @@ public class Mine_Now extends BaseActivity implements OnItemClickListener,OnFini
 
     @Override
     public void itemClick(int pos) {
-        dialog= DialogUtil.initLoadDialog(this, Values.HINT_DIALOG_LOAD);
-        dialog.show();
-        initPager(pos);
+        clickDialog(pos);
+    }
+
+    private void clickDialog(final int pos){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        final Context context=this;
+        builder.setTitle(Values.DIALOG_MINE_NOW_TITLE);
+        builder.setItems(Values.DIALOG_MINE_NOW_ITEM, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                switch (which){
+                    case 0:
+                        dialog= DialogUtil.initLoadDialog(context, Values.HINT_DIALOG_LOAD);
+                        dialog.show();
+                        initPager(pos);
+                        break;
+                    case 1:
+                        Intent intent=new Intent();
+                        intent.putExtra(Values.MINE_INTENT_RENEW_SIGN,"bar_code="+dataList.get(pos).getNum()+"&check="+dataList.get(pos).getCheck());
+                        intent.setClass(context,Mine_Renew.class);
+                        startActivity(intent);
+                }
+            }
+        });
+        builder.show();
     }
 
     private void initPager(int pos) {

@@ -10,7 +10,7 @@
     <string name="login_captcha_hint">点击刷新</string>
     <string name="login_click">登录</string>
     <string name="login_title">登录图书馆</string>
-
+    <string name="mine_renew_click">续借</string>
     <string name="app_sign">软件工程与可视化分析实验室</string>
 
     <string name="main_bottom_index">导航</string>
@@ -53,6 +53,7 @@
     <string name="mine_have_title">借阅历史</string>
     <string name="mine_now_title">当前借阅</string>
     <string name="mine_info_title">用户信息</string>
+    <string name="mine_renew_title">图书续借</string>
 
     <string name="inform_show_button_store">保存图片</string>
     <string name="mine_now_hint">一本都没有，快去借书吧</string>
@@ -62,6 +63,7 @@
     <string name="mine_lend_pie">借阅分类分布</string>
     <string name="set_about_text_name">HFUTLibrary</string>
     <string name="set_about_text_index">版本1.1.0</string>
+
 
 
 </resources>

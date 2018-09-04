@@ -24,6 +24,7 @@
         <activity android:name=".activity.mine.Mine_Now"/>
         <activity android:name=".activity.mine.Mine_Have"/>
         <activity android:name=".activity.mine.Mine_Info"/>
+        <activity android:name=".activity.mine.Mine_Renew"/>
 
         <activity android:name=".activity.inform.Inform_Show"/>
         <activity android:name=".activity.inform.Inform_Detail"/>

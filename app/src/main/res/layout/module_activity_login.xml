@@ -79,7 +79,7 @@
 
         <Button
             android:id="@+id/login_bt_click"
-            style="@style/LoginClickButtonStyle"
+            style="@style/ClickButtonStyle"
             android:layout_below="@+id/login_img_captcha"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="10dp"

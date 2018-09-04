@@ -78,7 +78,7 @@ public class App_Login extends BaseActivity implements OnLoginCallBackListener {
     }
 
     private void initCaptchaImg() {
-        Call call= OkHttpUtil.getCallFromGET(Urls.URL_LOGIN_CAPTCHA);
+        Call call= OkHttpUtil.getCallFromGET(Urls.URL_IMG_CAPTCHA);
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {

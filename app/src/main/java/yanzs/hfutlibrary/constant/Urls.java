@@ -7,7 +7,12 @@ public class Urls {
     public static final String URL_LOGIN_VERIFY ="http://210.45.242.5:8080/reader/redr_verify.php";
     public static final String URL_LOGIN_REFERER="http://210.45.242.5:8080/reader/login.php";
     public static final String URL_LOGIN_INFO="http://210.45.242.5:8080/reader/redr_info.php";
-    public static final String URL_LOGIN_CAPTCHA="http://210.45.242.5:8080/reader/captcha.php";
+    public static final String URL_IMG_CAPTCHA ="http://210.45.242.5:8080/reader/captcha.php";
+
+    public static final String URL_MINE_RENEW_CAPTCHA_REFERER ="http://210.45.242.5:8080/reader/book_lst.php";
+    public static final String URL_MINE_RENEW ="http://210.45.242.5:8080/reader/ajax_renew.php?";
+
+
 
     public static final String URL_CHART_MONTH_SORT="http://210.45.242.5:8080/reader/ajax_month_sort.php";
     public static final String URL_CHART_YEAR_SORT="http://210.45.242.5:8080/reader/ajax_year_sort.php";
