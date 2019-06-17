@@ -5,9 +5,13 @@ import android.content.Context;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import yanzs.hfutlibrary.base.BaseShowList;
 import yanzs.hfutlibrary.base.BaseViewHolder;
 import yanzs.hfutlibrary.R;
+import yanzs.hfutlibrary.constant.Values;
 
 public class InformShowAdapter extends BaseShowList<String> {
 
@@ -18,15 +22,14 @@ public class InformShowAdapter extends BaseShowList<String> {
     }
 
     private void initDate() {
-        if (getResponseDou().getAuthor_intro()!=null&&getResponseDou().getAuthor_intro().length()>0){
-            getData().add(getResponseDou().getAuthor_intro());
+        if (getResponseDou()!=null&&getResponseDou().getStrings()!=null){
+            setData(getResponseDou().getStrings());
+        }else {
+            List<String> data=new ArrayList<>();
+            data.add(Values.HINT_SHOW_ERROR);
+            setData(data);
         }
-        if (getResponseDou().getSummary()!=null&&getResponseDou().getSummary().length()>0){
-            getData().add(getResponseDou().getSummary());
-        }
-        if (getResponseDou().getCatalog()!=null&&getResponseDou().getCatalog().length()>0){
-            getData().add(getResponseDou().getCatalog());
-        }
+
     }
 
     @Override

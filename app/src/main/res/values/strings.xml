@@ -44,6 +44,7 @@
     <string name="search_text_way">搜索方式：</string>
     <string name="menu_text_about">关于</string>
     <string name="menu_text_theme">主题</string>
+    <string name="menu_text_quit">注销</string>
 
     <string name="menu_text_lend">借阅分析</string>
     <string name="menu_text_have">借阅历史</string>

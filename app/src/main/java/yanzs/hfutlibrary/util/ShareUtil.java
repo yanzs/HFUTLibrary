@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class ShareUtil {
-    private volatile static ShareUtil instance;
+    private  static ShareUtil instance;
     private static SharedPreferences sharedPreferences;
     private ShareUtil(){
 

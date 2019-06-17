@@ -8,6 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import yanzs.hfutlibrary.bean.Bean_Inform_Detail;
@@ -20,6 +21,7 @@ import yanzs.hfutlibrary.bean.Bean_Inform_WillBuy;
 import yanzs.hfutlibrary.bean.Bean_Mine_Have;
 import yanzs.hfutlibrary.bean.Bean_Mine_Now;
 import yanzs.hfutlibrary.bean.Bean_News;
+import yanzs.hfutlibrary.bean.responsedou.DouData;
 import yanzs.hfutlibrary.bean.responselib.Content;
 import yanzs.hfutlibrary.bean.responselib.RootResponseLib;
 import yanzs.hfutlibrary.bean.responsemine.Rootclass;
@@ -218,6 +220,10 @@ public class JsoupUtil {
         Document html = Jsoup.parse(txt);
         Elements font = html.getElementsByTag("font");
         String result = font.last().text();
+        int n=result.indexOf(" ");
+        if (n>0){
+            result=result.substring(0,n);
+        }
         if (result.length() > 0) {
             return Integer.parseInt(result);
         } else {
@@ -379,6 +385,60 @@ public class JsoupUtil {
             dataList.add(beanInformWillBuy);
         }
         return dataList;
+    }
+
+    public static String getDoubanWinData(Context context){
+        String response=ShareUtil.loadStringData(context, ShareKey.SHARED_KEY,ShareKey.KEY_INFORM_PAGE_BOOK_DETAIL_IMG);
+        Document html = Jsoup.parse(response);
+        Elements script=html.select("script");
+        String s=script.toString();
+        System.out.println(s);
+        s=s.substring(s.indexOf("_DATA_"),s.indexOf("_USER_"));
+        s=s.substring(s.indexOf("\"")+1,s.lastIndexOf("\""));
+        return s;
+    }
+
+
+    public static DouData getDoubanInfo(Context context){
+        String response=ShareUtil.loadStringData(context, ShareKey.SHARED_KEY,ShareKey.KEY_INFORM_PAGE_BOOK_INFO);
+        Document html = Jsoup.parse(response);
+        List<String> array=new ArrayList<>();
+        Elements a=html.getElementsByClass("nbg");
+        String aText=a.toString();
+        String imgUrl=aText.substring(aText.indexOf("href")+6,aText.lastIndexOf("title")-2);
+        String title=aText.substring(aText.indexOf("title")+7,aText.indexOf("\">"));
+        Elements intro=html.getElementsByClass("intro");
+        if (intro.size()>0){
+            StringBuilder string1= new StringBuilder("简介\n\n");
+            for (Element el:intro){
+                Elements p1=el.getElementsByTag("p");
+                if (p1.last()==null||p1.last().text().equals("(展开全部)")){
+                    continue;
+                }
+                for (Element e :p1){
+                    string1.append(e.text()).append("\n");
+                }
+                string1.append("\n");
+            }
+            array.add(string1.toString());
+        }
+
+        String id=ShareUtil.loadStringData(context,ShareKey.SHARED_KEY,ShareKey.KEY_INFORM_PAGE_BOOK_ID);
+        String classId="dir_"+id+"_full";
+        Element div=html.getElementById(classId);
+        if (div!=null){
+            String t=div.toString();
+            t=t.substring(0,t.lastIndexOf("<br>"));
+            String[] p=t.split("<br>");
+            p[0]=p[0].substring(p[0].indexOf(">")+1);
+            StringBuilder string3= new StringBuilder("目录\n\n");
+            for (String i:p){
+                string3.append(i.trim()).append("\n");
+            }
+            array.add(string3.toString());
+        }
+
+        return  new DouData(title,imgUrl,array);
     }
 
     public static List<Bean_Inform_HotTop> getInformHotTop(Context context) {

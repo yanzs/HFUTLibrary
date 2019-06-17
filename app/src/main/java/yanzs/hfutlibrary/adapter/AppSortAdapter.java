@@ -2,6 +2,8 @@ package yanzs.hfutlibrary.adapter;
 
 import android.widget.TextView;
 
+import java.lang.ref.ReferenceQueue;
+
 import yanzs.hfutlibrary.base.BaseListAdapter;
 import yanzs.hfutlibrary.base.BaseViewHolder;
 import yanzs.hfutlibrary.R;
@@ -10,10 +12,11 @@ public class AppSortAdapter extends BaseListAdapter {
 
     private String[] dataList;
 
+
+
     public AppSortAdapter(String[] dataList){
         this.dataList=dataList;
     }
-
 
     @Override
     protected void initItemView(BaseViewHolder holder, int position) {

@@ -46,7 +46,7 @@ public class Urls {
     public static final String URL_EDU_INFO="http://xcjwb.hfut.edu.cn/714/list.htm";
     public static final String URL_EDU_NEWS="http://xcjwb.hfut.edu.cn/573/list.htm";
 
-    public static final String URL_INFORM_PAGER_DETAIL ="https://api.douban.com/v2/book/isbn/";
-
+//    public static final String URL_INFORM_PAGER_DETAIL ="https://api.douban.com/v2/book/isbn/";
+    public static final String URL_INFORM_PAGER_DETAIL ="https://book.douban.com/subject_search?search_text=";
 
 }

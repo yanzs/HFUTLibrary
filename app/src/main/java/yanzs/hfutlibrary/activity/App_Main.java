@@ -21,6 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.OnClick;
+import okhttp3.HttpUrl;
 import yanzs.hfutlibrary.activity.mine.Mine_Have;
 import yanzs.hfutlibrary.activity.mine.Mine_Info;
 import yanzs.hfutlibrary.activity.mine.Mine_Lend;
@@ -39,6 +40,7 @@ import yanzs.hfutlibrary.util.DialogUtil;
 import yanzs.hfutlibrary.adapter.FragMainAdapter;
 import yanzs.hfutlibrary.util.JsoupUtil;
 import yanzs.hfutlibrary.util.OkHttpUtil;
+import yanzs.hfutlibrary.util.ShareUtil;
 import yanzs.hfutlibrary.util.ThemeUtil;
 import yanzs.hfutlibrary.view.CircleImageView;
 
@@ -162,6 +164,14 @@ public class App_Main extends BaseActivity implements  NavigationView.OnNavigati
                 intentTheme.setClass(this, Set_Theme.class);
                 changeTheme = true;
                 startActivity(intentTheme);
+                break;
+            case R.id.menu_quit:
+                ShareUtil.storeLocalData(this,ShareKey.SHARED_KEY,ShareKey.KEY_COOKIE,"");
+                OkHttpUtil.clearCookie(Urls.URL_ORIGIN);
+                Intent intent = new Intent();
+                intent.setClass(this,App_Login.class);
+                startActivity(intent);
+                finish();
                 break;
         }
         return true;

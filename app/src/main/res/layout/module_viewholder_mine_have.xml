@@ -15,7 +15,8 @@
         android:id="@+id/viewholder_mine_have_text_author"
         style="@style/ViewHolderLoopTextStyle"
         android:layout_below="@id/viewholder_mine_have_text_name"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:maxWidth="160dp"/>
 
     <TextView
         android:id="@+id/viewholder_mine_have_text_local"

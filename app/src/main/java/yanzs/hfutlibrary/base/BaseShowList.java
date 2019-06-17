@@ -26,6 +26,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
+import yanzs.hfutlibrary.bean.responsedou.DouData;
 import yanzs.hfutlibrary.bean.responsedou.RootResponseDou;
 import yanzs.hfutlibrary.constant.Values;
 import yanzs.hfutlibrary.listener.OnItemClickListener;
@@ -33,11 +34,12 @@ import yanzs.hfutlibrary.R;
 import yanzs.hfutlibrary.util.ColorUtil;
 import yanzs.hfutlibrary.util.FileUtil;
 import yanzs.hfutlibrary.util.GsonUtil;
+import yanzs.hfutlibrary.util.JsoupUtil;
 import yanzs.hfutlibrary.util.OkHttpUtil;
 
 public abstract class BaseShowList<T> extends RecyclerView.Adapter<BaseViewHolder> {
 
-    private RootResponseDou responseDou;
+    private DouData responseDou;
     private Bitmap bitmap;
     private Handler handler = new Handler();
     private OnItemClickListener onItemClickListener;
@@ -53,7 +55,7 @@ public abstract class BaseShowList<T> extends RecyclerView.Adapter<BaseViewHolde
         this.context = context;
         this.rela_background=rela_background;
         this.activity=activity;
-        responseDou = GsonUtil.getResponseRootDou(context);
+        responseDou = JsoupUtil.getDoubanInfo(context);
         text_download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +79,11 @@ public abstract class BaseShowList<T> extends RecyclerView.Adapter<BaseViewHolde
         return data;
     }
 
-    public RootResponseDou getResponseDou() {
+    public void setData(List<T> data) {
+        this.data = data;
+    }
+
+    public DouData getResponseDou() {
         return responseDou;
     }
 
@@ -117,7 +123,11 @@ public abstract class BaseShowList<T> extends RecyclerView.Adapter<BaseViewHolde
             final ImageView img_cover = holder.getView(R.id.viewholder_inform_show_img_cover);
             TextView text_title = holder.getView(R.id.viewholder_inform_show_text_title);
             if (responseDou.getTitle()!=null&&responseDou.getTitle().length()>0){
-                text_title.setText(responseDou.getTitle());
+                if (responseDou.getTitle().equals("点击上传封面图片")){
+                    text_title.setText(Values.HINT_SHOW_ERROR);
+                }else {
+                    text_title.setText(responseDou.getTitle());
+                }
             }else {
                 text_title.setText(Values.HINT_SHOW_ERROR);
             }
@@ -125,16 +135,23 @@ public abstract class BaseShowList<T> extends RecyclerView.Adapter<BaseViewHolde
                 @Override
                 public void run() {
                     img_cover.setImageBitmap(bitmap);
-                    Palette palette = Palette.generate(bitmap);
-                    int vibrantDark = palette.getDarkVibrantColor(ColorUtil.getThemeColor(context));
-                    int dark= ColorUtil.colorBurn(vibrantDark);
-                    rela_background.setBackgroundColor(dark);//为LinearLayout添加背景色
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        activity.getWindow().setStatusBarColor(dark);
+                    try {
+                        Palette palette = Palette.generate(bitmap);
+                        int vibrantDark = palette.getDarkVibrantColor(ColorUtil.getThemeColor(context));
+                        int dark= ColorUtil.colorBurn(vibrantDark);
+                        rela_background.setBackgroundColor(dark);//为LinearLayout添加背景色
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            activity.getWindow().setStatusBarColor(dark);
+                        }
+                    }catch (Exception e){
+                        rela_background.setBackgroundColor(ColorUtil.getThemeColor(context));
+                        img_cover.setImageDrawable(context.getResources().getDrawable(R.drawable.default_img));
                     }
+
+
                 }
             };
-            if (responseDou.getImage()!=null&&responseDou.getImage().length()>0){
+            if (responseDou.getImgUrl()!=null&&responseDou.getImgUrl().length()>0){
                 initCoverImg(imgRun);
             }else {
                 rela_background.setBackgroundColor(ColorUtil.getThemeColor(context));
@@ -146,7 +163,7 @@ public abstract class BaseShowList<T> extends RecyclerView.Adapter<BaseViewHolde
     }
 
     private void initCoverImg(final Runnable runnable) {
-        Call call = OkHttpUtil.getCallFromGET(responseDou.getImage());
+        Call call = OkHttpUtil.getCallFromGET(responseDou.getImgUrl());
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
+import android.media.AudioManager;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -75,6 +76,7 @@ public class App_Login extends BaseActivity implements OnLoginCallBackListener {
         passwd= ShareUtil.loadStringData(this, ShareKey.SHARED_KEY,ShareKey.KEY_USER_PASSWD);
         login_textinputedittext_number.setText(number);
         login_textinputedittext_passwd.setText(passwd);
+
     }
 
     private void initCaptchaImg() {

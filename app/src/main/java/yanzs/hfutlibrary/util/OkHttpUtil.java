@@ -90,6 +90,7 @@ public class OkHttpUtil {
         cookieList.add(cookies);
         getInstance().httpClient.cookieJar().saveFromResponse(url,cookieList);
     }
+
     public static Call getCallFromGET(String url){
         return getInstance()._getCallFromGET(url);
     }

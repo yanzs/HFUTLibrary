@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 
+import yanzs.hfutlibrary.bean.newdouban.RootNewDou;
 import yanzs.hfutlibrary.bean.post.RootPost;
 import yanzs.hfutlibrary.bean.responsedou.RootResponseDou;
 import yanzs.hfutlibrary.bean.responselib.RootResponseLib;
@@ -25,8 +26,6 @@ public class GsonUtil {
         }
         return gson.fromJson(response,RootResponseLib.class);
     }
-
-
     public static Rootclass getResponseRootclass(String response){
         Gson gson=new Gson();
         if (response.length()==0){
@@ -51,12 +50,11 @@ public class GsonUtil {
 
 
 
-    public static RootResponseDou getResponseRootDou(Context context){
-        String response=ShareUtil.loadStringData(context, ShareKey.SHARED_KEY,ShareKey.KEY_INFORM_PAGE_BOOK_DETAIL_IMG);
+    public static RootNewDou getResponseRootDou(String response){
         Gson gson=new Gson();
         if (response.length()==0){
             return null;
         }
-        return gson.fromJson(response,RootResponseDou.class);
+        return gson.fromJson(response, RootNewDou.class);
     }
 }

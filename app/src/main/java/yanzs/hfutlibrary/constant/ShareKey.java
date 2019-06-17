@@ -28,7 +28,8 @@ public class ShareKey {
     public static final String KEY_NEWS_PAGE_LIB_NEWS ="lib_news";
     public static final String KEY_NEWS_PAGE_EDU_NEWS="edu_news";
     public static final String KEY_NEWS_PAGE_EDU_INFO ="edu_info";
-
+    public static final String KEY_INFORM_PAGE_BOOK_ID ="book_id";
+    public static final String KEY_INFORM_PAGE_BOOK_INFO ="book_info";
     public static final String KEY_INFORM_PAGE_BOOK_DETAIL ="book_detail";
     public static final String KEY_INFORM_PAGE_BOOK_DETAIL_IMG ="book_detail_IMG";
     public static final String KEY_INFORM_PAGE_NEW_BOOK ="new_book";
